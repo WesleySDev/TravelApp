@@ -1,4 +1,5 @@
-package model
+// Tabela banco de dados
+package models
 
 import "gorm.io/gorm"
 

@@ -1,3 +1,4 @@
+// Struct para receber dados (Request)
 package controllers
 
 type RegisterRequest struct {
