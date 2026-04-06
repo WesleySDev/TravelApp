@@ -43,8 +43,14 @@ func main() {
 	// Mostra mensagem se conectou com sucesso
 	fmt.Println(" Conectado ao PostgresSQL!")
 
-	// Cria ou atualiza automaticamente a tabela User no banco
-	if err := db.AutoMigrate(&model.User{}); err != nil {
+	// Cria ou atualiza automaticamente a tabela User no banco `auto-migrate`
+	if err := db.AutoMigrate(
+		&model.User{},
+		&model.Destination{},
+		&model.Package{},
+		&model.Booking{},
+		&model.Favorite{},
+	); err != nil {
 		log.Fatalf("Erro ao migrar tabela: %v", err) // Encerra se der erro na migração
 	}
 }
